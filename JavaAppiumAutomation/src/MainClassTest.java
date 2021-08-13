@@ -1,7 +1,22 @@
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class MainClassTest extends MainClass {
+
+// аннотации
+    @Before
+    public void textStartTest() {
+        System.out.println("Start test");
+    }
+
+    @After
+    public void textFinishTest() {
+        System.out.println("Finish test");
+    }
+
+// тесты
     @Test
     public void testGetLocalNumber() {
         int expected = 14;
@@ -17,6 +32,11 @@ public class MainClassTest extends MainClass {
             Assert.fail("Oh, no! getClassNumber < 45");
         }
     }
+
+    @Test
+    public void testGetClassString() {
+        if (!getClassString().toLowerCase().contains("hello")) {
+            Assert.fail("String doesn't contains 'Hello' or 'hello'!");
+        }
+    }
 }
-
-
