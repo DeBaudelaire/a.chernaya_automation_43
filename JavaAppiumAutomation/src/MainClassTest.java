@@ -35,7 +35,7 @@ public class MainClassTest extends MainClass {
 
     @Test
     public void testGetClassString() {
-        if (!getClassString().toLowerCase().contains("hello")) {
+        if (!getClassString().contains("Hello") && !getClassString().contains("hello")) {
             Assert.fail("String doesn't contains 'Hello' or 'hello'!");
         }
     }
